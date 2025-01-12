@@ -1,0 +1,265 @@
+/* About Section Styles */
+.about-area {
+    position: relative;
+    padding: 100px 0;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+/* Background Shapes */
+.circle-shape-1,
+.circle-shape-2,
+.square-shape-1 {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.circle-shape-1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(64, 123, 255, 0.05);
+    top: -100px;
+    left: -150px;
+}
+
+.circle-shape-2 {
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 107, 107, 0.05);
+    bottom: -50px;
+    right: -100px;
+}
+
+.square-shape-1 {
+    width: 100px;
+    height: 100px;
+    background: rgba(64, 123, 255, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: rotate(45deg);
+}
+
+/* Section Header */
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-header .subtitle {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(64, 123, 255, 0.1);
+    color: #407BFF;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.section-header .title {
+    font-size: 42px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 20px;
+}
+
+.section-header .description {
+    max-width: 600px;
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Image Section */
+.about-image-container {
+    position: relative;
+    padding: 20px;
+}
+
+.main-image {
+    position: relative;
+    z-index: 1;
+}
+
+.main-img {
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Floating Cards */
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.floating-card:hover {
+    transform: translateY(-5px);
+}
+
+.students-card {
+    top: 30px;
+    right: 0;
+}
+
+.rating-card {
+    bottom: 30px;
+    left: 0;
+}
+
+.floating-card i {
+    font-size: 24px;
+    color: #407BFF;
+    margin-bottom: 10px;
+}
+
+.floating-card h4 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 5px;
+}
+
+.floating-card p {
+    font-size: 14px;
+    color: #666666;
+    margin: 0;
+}
+
+/* Content Section */
+.about-content {
+    padding-left: 50px;
+}
+
+.content-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 40px;
+}
+
+/* Features List */
+.features-list {
+    margin-bottom: 40px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(64, 123, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.icon-box i {
+    font-size: 24px;
+    color: #407BFF;
+}
+
+.feature-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 10px;
+}
+
+.feature-content p {
+    font-size: 14px;
+    color: #666666;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.btn {
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.primary-btn {
+    background: #407BFF;
+    color: white;
+    border: none;
+}
+
+.primary-btn:hover {
+    background: #2659ff;
+    transform: translateY(-2px);
+    color: white;
+}
+
+.secondary-btn {
+    background: transparent;
+    color: #407BFF;
+    border: 2px solid #407BFF;
+}
+
+.secondary-btn:hover {
+    background: rgba(64, 123, 255, 0.1);
+    color: #407BFF;
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    .about-content {
+        padding-left: 0;
+        margin-top: 50px;
+    }
+
+    .section-header .title {
+        font-size: 36px;
+    }
+
+    .content-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 767px) {
+    .about-area {
+        padding: 60px 0;
+    }
+
+    .section-header .title {
+        font-size: 28px;
+    }
+
+    .content-title {
+        font-size: 24px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .floating-card {
+        padding: 15px;
+    }
+
+    .floating-card h4 {
+        font-size: 20px;
+    }
+}

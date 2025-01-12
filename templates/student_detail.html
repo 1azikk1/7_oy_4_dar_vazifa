@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+{{ title }}
+{% endblock title %}
+
+{% block main %}
+
+<!--cards-->
+<div class="d-flex justify-content-center">
+  <div class="card mb-5" style="max-width: 540px;" >
+      <div class="col-md-12">
+        <div class="card-body">
+          <h5 class="card-title">{{ student.course }} - talabasi</h5>
+          <p class="card-text"><strong>Ism:</strong> {{ student.name }}</p>
+          <p class="card-text"><strong>Email:</strong> {{ student.email }}</p>
+          <p class="card-text"><strong>Ro'yxatdan o'tilgan vaqt:</strong> {{ student.enrolled_at }}</p>
+          <div class="d-flex justify-content-around">
+            <a href="{% url 'home' %}" class="btn btn-primary" data-mdb-ripple-init>Ortga</a>
+
+            <!--dropdown button-->
+          <div class="btn-group dropup">
+            <button
+            type="button" class="btn btn-primary dropdown-toggle"
+            data-mdb-dropdown-init
+            data-mdb-ripple-init aria-expanded="false">
+              More
+            </button>
+            <ul class="dropdown-menu">
+              {% if perms.education.delete_student %}
+              <li><a class="dropdown-item" href="{% url 'delete_student' student.id %}">Delete</a></li>
+              <li><a class="dropdown-item" href="{% url 'update_student' student.id %}">Update</a></li>
+              {% else %}
+              <div class="alert alert-danger d-flex justify-content-center" role="alert">
+                  Talabalar ustida hech qanday amal bajara olmaysiz!!!
+                </div>
+              {% endif %}
+            </ul>
+          </div>
+            <!--dropdown button-->
+
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!--cards-->
+
+
+{% endblock main %}
