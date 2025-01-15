@@ -16,9 +16,6 @@ class Course(models.Model):
         verbose_name = 'kurs '
         verbose_name_plural = 'kurslar'
 
-    def get_absolute_url(self):
-        return reverse_lazy('course_detail', kwargs={'course_id': self.pk})
-
 
 class Student(models.Model):
     name = models.CharField(max_length=50, verbose_name='Talaba ismi')

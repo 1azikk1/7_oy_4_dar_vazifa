@@ -38,24 +38,8 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="#courses">Kurslar</a>
-        </li>
-
-        <li class="nav-item">
           <a class="nav-link" href="#students">Talabalar</a>
         </li>
-
-        {% if perms.education.add_course %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'add_course' %}">Kurs qo'shish</a>
-        </li>
-        {% endif %}
-
-        {% if perms.education.add_student %}
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'add_student' %}">Talaba qo'shish</a>
-        </li>
-        {% endif %}
 
         {% if request.user.is_staff %}
         <li class="nav-item">
@@ -66,6 +50,32 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'about' %}">About</a>
         </li>
+
+      <!--dropdown button-->
+        {% if request.user.is_staff %}
+        <li>
+          <button
+              type="button"
+              class="btn btn-secondary dropdown-toggle"
+              id="dropdownMenuOffset"
+              data-mdb-dropdown-init
+              data-mdb-ripple-init
+              aria-expanded="false"
+              data-mdb-offset="10,20"
+            >
+              Add
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+              {% if perms.education.add_student %}
+              <li><a class="dropdown-item" href="{% url 'add_student' %}">Student</a></li>
+              {% endif %}
+              {% if perms.education.add_course %}
+              <li><a class="dropdown-item" href="{% url 'add_course' %}">Course</a></li>
+              {% endif %}
+            </ul>
+        </li>
+        {% endif %}
+        <!--dropdown button-->
       </ul>
       <!-- Left links -->
 

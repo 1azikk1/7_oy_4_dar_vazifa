@@ -1,3 +1,4 @@
+
 from django.contrib.auth.decorators import user_passes_test
 
 
@@ -10,3 +11,4 @@ def user_staff_required(function=None, redirect_field_name=None, login_url='404'
     if function:
         return actual_decorator(function)
     return actual_decorator
+
